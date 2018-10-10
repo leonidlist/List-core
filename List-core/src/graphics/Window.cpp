@@ -54,6 +54,11 @@ namespace List {
 				return false;
 			}
 			glfwMakeContextCurrent(_window);
+			if (glewInit() != GLEW_OK) {
+				std::cout << "Failed to initialize GLEW." << std::endl;
+				return false;
+			}
+			std::cout << glGetString(GL_VERSION) << std::endl;
 			return true;
 		}
 

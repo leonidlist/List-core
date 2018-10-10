@@ -22,5 +22,12 @@ namespace List {
 			Square(float red, float green, float blue);
 			void Draw() override;
 		};
+
+		class Circle :public Shape {
+			GLfloat _size;
+		public:
+			Circle(float size, float red, float green, float blue);
+			void Draw() override;
+		};
 	}
 }

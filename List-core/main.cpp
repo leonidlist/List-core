@@ -5,11 +5,14 @@ int main() {
 	List::Graphics::Window window("List-engine", 800, 600);
 	List::Graphics::Triangle triangle(0,0,255);
 	List::Graphics::Square square(255, 255, 255);
+	List::Graphics::Circle circle(400, 255, 255, 255);
 	glClearColor(255, 0, 0, 1);
-	std::cout << glGetString(GL_VERSION) << std::endl;
+	GLuint vao;
+	glGenVertexArrays(1, &vao);
+	glBindVertexArray(vao);
 	while (!window.Closed()) {
 		window.Clear();
-		square.Draw();
+		glDrawArrays(GL_ARRAY_BUFFER, 0, 6);
 		window.Update();
 	}
 	/*system("pause");*/
