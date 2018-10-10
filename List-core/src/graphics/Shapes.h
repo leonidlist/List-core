@@ -4,15 +4,23 @@
 namespace List {
 	namespace Graphics {
 		class Shape {
-
-		};
-
-		class Triangle:public Shape {
-		private:
+		protected:
 			float _red, _green, _blue;
 		public:
+			Shape(float, float, float);
+			virtual void Draw() = 0;
+		};
+
+		class Triangle:public Shape {	
+		public:
 			Triangle(float red, float green, float blue);
-			void Draw() const;
+			void Draw() override;
+		};
+
+		class Square :public Shape {
+		public:
+			Square(float red, float green, float blue);
+			void Draw() override;
 		};
 	}
 }
