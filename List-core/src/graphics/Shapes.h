@@ -9,7 +9,6 @@ namespace List {
 
 		class Triangle:public Shape {
 		private:
-			float _startPosX, _startPosY;
 			float _red, _green, _blue;
 		public:
 			Triangle(float red, float green, float blue);
